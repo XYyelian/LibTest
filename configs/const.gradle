@@ -1,0 +1,35 @@
+ext {
+    androidVersion = [
+        androidBuildToolsVersion:"30.0.2",
+        androidMinSdkVersion:21,
+        androidTargetSdkVersion:30,
+        androidCompileSdkVersion:30,
+        versionCode:1,
+        versionName:"CRA-110_N1A005",
+        applicationId:"com.cii.cra110"
+    ]
+
+    supportDesign = "28.0.0"
+    androidxAppcompat = "1.2.0"
+    constraintlayoutVersion = "1.1.3"
+    junitVersion = "4.12"
+    junitTestVersion = "1.1.1"
+    espressoVersion = "3.1.1"
+
+    //CameraX
+    cameraVersion = "1.1.0-alpha11"
+    cameraViewVersion = "1.0.0-alpha32"
+
+    //guava
+    guavaVersion = "28.1-android"
+    guavaRetyingVersion = "2.0.0"
+
+    //第三方依赖库
+    fastjsonVersion = "1.2.55"
+    butterknifeVersion = "10.2.1"
+    glideVersion = "4.12.0"
+    permissionVersion = "3.0.0"
+    tessVersion = "9.1.0"
+    rxbindingVersion = "2.2.0"
+    okhttpVersion = "4.9.0"
+}

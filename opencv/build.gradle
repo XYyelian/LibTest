@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library'
+}
+apply from: '../configs/const.gradle'
+
+def openCVersionName = "4.5.2"
+def openCVersionCode = ((4 * 100 + 5) * 100 + 2) * 10 + 0
+
+android {
+    def config = rootProject.ext.androidVersion
+
+    compileSdkVersion config.androidCompileSdkVersion
+    buildToolsVersion config.androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.androidMinSdkVersion
+        targetSdkVersion config.androidTargetSdkVersion
+
+        versionCode openCVersionCode
+        versionName openCVersionName
+
+        //配置需要生成的ABI
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src']  // TODO Use original files instead of copied into build directory
+            aidl.srcDirs = ['src']
+            res.srcDirs = ['res']
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+}
+
+dependencies {
+}
